@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+}
+.avatarContainer{
+
+    width:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.body{
+    display: flex;
+    width: 100%;
+    
+    
+}
+.bodyLeft{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 75%;
+   
+}
+.bodyRight{
+    display: flex;
+    flex-direction: column;
+}
+.space{
+    margin-bottom: 5px;
+    font-weight:bolder;
+    font-size: small;
+}
+.spaceBet{
+    height: 50%;
+
+
+}
+.spaceBt{
+    height: 50%;
+}
+
+.dividerContainer{
+    display: flex;
+    justify-content: center;
+    
+}
+.divider{
+    width: 75%;
+    border-bottom: rgb(131, 131, 131) 1px solid;
+}
+.lastMsg{
+    font-size: small;
+    color: rgb(120, 127, 133);
+}

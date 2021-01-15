@@ -1,0 +1,29 @@
+.pannelList1{
+    
+    height:100vh;
+    overflow: auto;
+    width: 30%;
+    /* opacity:.5; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(241, 241, 243);
+
+    
+    
+    }
+     .pannelList1::-webkit-scrollbar{
+        width:5px;
+    
+      background:  rgb(218, 212, 212);
+    } 
+     .pannelList1::-webkit-scrollbar-thumb{
+        width:5px;
+    
+      background:  rgb(135, 135, 135);
+       border-radius: 5px;
+    } 
+    ul.pannelList1{
+        margin: 0;
+        padding :0;
+  
+      }

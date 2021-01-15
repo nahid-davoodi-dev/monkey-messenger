@@ -1,0 +1,11 @@
+.PannelInfo1 {
+    
+    height:100vh;
+    overflow: auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(205, 205, 209);
+    
+    
+    }

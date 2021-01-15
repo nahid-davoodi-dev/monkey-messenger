@@ -1,0 +1,8 @@
+.inputbar{
+    width: 75%;
+  font-size: 1rem;
+    min-height: 35px;
+    border-radius: 10px;
+    border:1px solid rgb(114, 112, 112);
+    outline: none;
+}

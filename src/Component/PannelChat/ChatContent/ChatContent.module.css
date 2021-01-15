@@ -1,0 +1,25 @@
+.other{
+    background-color: rgb(196, 196, 177);
+    max-width: 70%;
+    width: max-content;
+ border-radius: 15px;
+ border-bottom-left-radius: 0px;
+ padding: 8px;
+ font-weight: normal;
+
+
+}
+.me{
+    background-color: rgb(1, 38, 247);
+    max-width: 70%;
+    width: max-content;
+    align-self:flex-end;
+    font-weight: normal;
+ border-radius: 16px;
+ padding: 8px;
+ border-bottom-right-radius:0px ;
+ color: white;
+
+
+
+}
