@@ -1,6 +1,5 @@
-import React from 'react'
-import ActionTypes from './ActionType';
-
+import React from "react";
+import ActionTypes from "./ActionType";
 
 export const INIT_STATE = {
   selectedChatId: 1,
@@ -68,7 +67,7 @@ export const INIT_STATE = {
     {
       chatListId: 3,
 
-      messegeHistoryId: 2,
+      messegeHistoryId: 1,
       name: "Pooriya Abedi",
       time: "1hr",
       unreadMessageCount: 1,
@@ -307,7 +306,7 @@ export const INIT_STATE = {
       senderId: 2,
       messegeHistoryClear: false,
     },
-    
+
     {
       messegeHistoryId: 2,
       messeges: [
@@ -329,14 +328,13 @@ export const INIT_STATE = {
           sendTime: "21:54",
           deliveredTime: "21:54",
           readTime: "21:54",
-          content: "Hello, How Are you? what are you doing?",
+          content:
+            "Hello, How Are you? what are you doingttttttttttttttttttttttttttttttttttttttttttttttt?",
         },
       ],
       senderId: 3,
       messegeHistoryClear: false,
     },
-
-    
   ],
   contacts: [
     {
@@ -346,17 +344,69 @@ export const INIT_STATE = {
   ],
   groups: [],
   channels: [],
+  filterSearch: [],
 };
 
-export default function reducer(state=INIT_STATE,dispatch) {
+export default function reducer(state = INIT_STATE, dispatch) {
   switch (dispatch.type) {
     case ActionTypes.getList:
-      return state
-      
-     case ActionTypes.getMessages:
-       return state
-  
+      return state;
+
+    case ActionTypes.getMessages:
+      return state;
+    case ActionTypes.selectListInLeft:
+      const recordmsgHistory = state.chatList.filter(
+        (record) => record.chatListId === dispatch.payload
+      );
+      // console.log(recordmsgHistory, "recordmsgHistory");
+
+      return {
+        ...state,
+        selectedChatId: dispatch.payload,
+        selectedMessegeHistoryId: recordmsgHistory[0].messegeHistoryId,
+      };
+    case ActionTypes.sendMsg:
+      let tempMsgHistoryList = [...state.messegeHistory];
+      let indexMsgHistory = tempMsgHistoryList.findIndex(
+        (record) => record.messegeHistoryId === state.selectedMessegeHistoryId
+      );
+      if (indexMsgHistory === -1) {
+        console.log("not Found");
+        return state;
+      }
+      let tempMsgHistory = { ...tempMsgHistoryList[indexMsgHistory] };
+      const newMsgId = tempMsgHistory.messeges.length - 1;
+      const newMsg = {
+        messegeId: newMsgId,
+        messegeHistoryId: tempMsgHistory.messegeHistoryId,
+        type: "text",
+        messegeSenderId: state.profileId,
+        sendTime: "21:54",
+        deliveredTime: "21:54",
+        readTime: "21:54",
+        content: dispatch.payload,
+      };
+      tempMsgHistory.messeges = [...tempMsgHistory.messeges, newMsg];
+      tempMsgHistoryList = [
+        ...tempMsgHistoryList.slice(0, indexMsgHistory),
+        tempMsgHistory,
+        ...tempMsgHistoryList.slice(indexMsgHistory + 1),
+      ];
+      return { ...state, messegeHistory: tempMsgHistoryList };
+
+    case ActionTypes.findTextinChat:
+      const temH = [...state.messegeHistory];
+      const tempMsg = temH.filter(
+        (record) => record.messegeHistoryId === state.selectedMessegeHistoryId
+      );
+      const ccc = tempMsg[0].messeges.filter(
+        (record) =>
+          record.content.toLowerCase() === dispatch.payload.toLowerCase()
+      );
+      console.log(ccc, "ccc");
+      return { ...state, filterSearch: ccc };
+
     default:
-    return state
+      return state;
   }
 }

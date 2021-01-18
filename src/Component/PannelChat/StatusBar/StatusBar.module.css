@@ -1,0 +1,38 @@
+.StatusBarContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px rgb(94, 90, 90) solid;
+}
+.RightStatus{
+  /* align-self: flex-end; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width:10%;
+   
+}
+.LeftStatus{
+  /* align-self: flex-end; */
+  width:40%;
+  /* border: 1px solid gray;
+  border-radius: 5px; */
+  /* text-align: center; */
+  font-size: large;
+  font-weight: bold;
+
+
+
+ }
+.BaseLine{width: 70%;background-color: royalblue;height: 45px;}
+
+.hide{
+  display: none;
+}
+.show{
+  display: flex;
+}
+.backgroundSearch{
+  background-color: chartreuse;
+}

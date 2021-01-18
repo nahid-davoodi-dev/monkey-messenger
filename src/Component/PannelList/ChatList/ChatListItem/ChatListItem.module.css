@@ -1,5 +1,24 @@
 .container{
     display: flex;
+    cursor: pointer;
+}
+.selectId{
+    display: flex;
+    cursor: pointer;
+    /* width: 75%; */
+
+    /* border-radius: 10px; */
+    /* border: 2px solid gray; */
+    background-color: brown;
+
+  
+} 
+.unselectId{
+    display: flex;
+    /* width: 75%; */
+
+    cursor: pointer;
+  
 }
 .avatarContainer{
 
@@ -24,13 +43,15 @@
 .bodyLeft{
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    width: 75%;
-   
+    margin: 2px;
+       width: 75%;
+
 }
 .bodyRight{
     display: flex;
     flex-direction: column;
+    align-content: center;
+    /* justify-content: space-between; */
 }
 .space{
     margin-bottom: 5px;
@@ -39,11 +60,18 @@
 }
 .spaceBet{
     height: 50%;
+    
 
 
 }
 .spaceBt{
     height: 50%;
+    background-color: royalblue;
+
+  width: 20px;
+  border-radius: 50%;
+  text-align: center;
+  align-self: right;
 }
 
 .dividerContainer{
@@ -54,6 +82,7 @@
 .divider{
     width: 75%;
     border-bottom: rgb(131, 131, 131) 1px solid;
+  
 }
 .lastMsg{
     font-size: small;
